@@ -1,0 +1,23 @@
+# Example ~/.codex/config.toml fragment for discord-mcp-bridge.
+# Replace <user> and paths before use. Do not put secrets in this file.
+
+[mcp_servers.discord]
+command = "/home/<user>/.bun/bin/bun"
+args = ["run", "--cwd", "/home/<user>/codex-discord", "server.ts"]
+startup_timeout_sec = 30
+tool_timeout_sec = 120
+
+[mcp_servers.discord.env]
+DISCORD_STATE_DIR = "/home/<user>/codex/discord-state"
+DISCORD_TMUX_TARGET = "codex-discord-direct"
+
+# Optional: keep Discord actions behind Codex approval prompts unless your
+# deployment intentionally runs in fully autonomous mode.
+[mcp_servers.discord.tools.reply]
+approval_mode = "approve"
+
+[mcp_servers.discord.tools.fetch_messages]
+approval_mode = "approve"
+
+[mcp_servers.discord.tools.react]
+approval_mode = "approve"

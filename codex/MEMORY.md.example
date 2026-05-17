@@ -1,0 +1,34 @@
+---
+schema_version: 1
+strategy: compact-index-plus-schema-files
+updated_at: 2026-01-01
+owner: YOUR_NAME_HERE
+---
+
+# Codex Memory Index
+
+Compact index injected into `~/.codex/AGENTS.md` by `~/rebuild-codex-agents-md.sh`.
+Treat these entries as stable context. Read the detail file only when relevant.
+
+## High Priority Facts
+
+- Owner identity: who you are, your Discord user_id, primary group.
+- Bot peers: which other AI bots share your Discord group.
+- Output style preferences: language, emoji prefix, formatting.
+- Security model active in this deployment.
+
+## Memory Files
+
+<!-- Append one line per memory file as you create them, e.g.:
+- [Owner profile](user_yourname.md) — basic identity, DM rule.
+- [Project bridge setup](project_codex_discord_bridge.md) — local paths, access model.
+- [Group chat protocol](feedback_group_chat_behavior.md) — when to speak / stay silent.
+- [Server reference](ref_servers.md) — SSH handles, hostnames.
+-->
+
+## Write Policy
+
+- Save only when the owner explicitly asks OR a task produces durable operating facts future sessions need.
+- Keep `MEMORY.md` compact. Details go in typed memory files, linked here.
+- No secrets / tokens / cookies / private keys / one-time codes.
+- After edit: run `~/rebuild-codex-agents-md.sh`, then start a new Codex session when immediate load is needed.

@@ -1,0 +1,23 @@
+discord-mcp-bridge
+==================
+
+This product includes software derived from the Discord plugin shipped with
+Claude Code's `claude-plugins-official` marketplace
+(https://docs.claude.com/en/docs/claude-code/plugins), version 0.0.4.
+
+Original work © Anthropic PBC, licensed under the Apache License, Version 2.0
+(see LICENSE).
+
+Modifications by the discord-mcp-bridge contributors:
+
+- Added optional `DISCORD_TMUX_TARGET` environment variable. When set, inbound
+  Discord messages that pass the access gate are also injected as keystrokes
+  into the named tmux session (using `tmux send-keys -l`, literal mode, to
+  prevent key-name interpretation). This lets AI CLIs that don't subscribe to
+  the `notifications/claude/channel` MCP server-push notification (e.g. OpenAI
+  Codex CLI) react to Discord messages when run as a tmux daemon.
+- Updated header comment to reflect the bridge purpose.
+- Repository-level changes: this NOTICE, fork-specific README, .gitignore.
+
+The original Anthropic notification path (`mcp.notification`) is preserved
+unchanged, so Claude Code remains a first-class consumer of this server.
